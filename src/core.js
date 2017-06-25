@@ -11,3 +11,11 @@ export function next(state) {
     entries: entries.skip(2) //skip makes a map without the first(n)
   });
 }
+
+export function vote(state, entry) {
+  return state.updateIn( //updateIn follows the keypath listed in the []'s.
+    ['vote', 'tally', entry],
+    0,
+    tally => tally + 1
+  );
+}

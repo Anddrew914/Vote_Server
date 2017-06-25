@@ -8,7 +8,8 @@ import {
 
 import {
   setEntries,
-  next
+  next,
+  vote
 } from '../src/core';
 
 describe('application logic', () => {
