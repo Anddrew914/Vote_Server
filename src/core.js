@@ -3,8 +3,13 @@ import {
   Map
 } from 'immutable';
 
+export const INITIAL_STATE = Map();
+
+
 export function setEntries(state, entries) {
-  return state.set('entries', List(entries)); //List makes entries immutable to pass testing
+  const list = List(entries);
+  return state.set('entries', list) //List makes entries immutable to pass testing
+      .set('initialEntries', list);
 }
 
 function getWinners(vote) {
