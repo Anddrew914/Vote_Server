@@ -39,9 +39,9 @@ export function next(state) {
   }
 }
 
-export function vote(state, entry) {
-  return state.updateIn( //updateIn follows the keypath listed in the []'s.
-    ['vote', 'tally', entry],
+export function vote(voteState, entry) {
+  return voteState.updateIn( //updateIn follows the keypath listed in the []'s.
+    ['tally', entry],
     0,
     tally => tally + 1
   );
